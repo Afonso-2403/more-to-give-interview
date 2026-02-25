@@ -11,6 +11,7 @@ Draft generation:
 - Agentic RAG architecture: The agent receives a user query and interacts with the knowledge base to fetch relevant data iteratively
 
 Validation/Fine Tuning:
+- Make sure all of the requirements are met, iterate again if not
 - Iterations with the user with new calls to the LLM to improve the draft 
 
 
