@@ -60,7 +60,9 @@ A big provider releasing this feature natively (whoever is already using ChatGPT
 
 ### Roadmap
 
-**MVP**
+**MVP**  
+Having a product to iterate on with users. Already useful over starting blank.
+
 - Hand curated golden dataset of foundations with concrete requirements
 - Prompts are hand drafted per foundation
 - No unstructured data storage, just the existing SQL DB
@@ -69,6 +71,14 @@ A big provider releasing this feature natively (whoever is already using ChatGPT
 - Validator model being a simple automation checking all sections are present, output is within limits
 - Simple Web UI where users edit to add style
 
+
+**Second Stage**  
+More automated product to be able to scale. Generated drafts can be edited by section  
+
+- Introduce the vectorDB with embeddings of past applications
+- Generate prompt dinamically from the foundation's requirements
+- Retrieval in steps of the context
+- Generate content by section, instead of the whole document
 
 
 ### Validation Approach
