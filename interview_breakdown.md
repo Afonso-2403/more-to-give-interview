@@ -3,9 +3,9 @@
 ### Problem decomposition
 
 Data preparation and Knowledge Base:
-- Metadata from foundations (scraped from the web and updated regularly). 
-- Metadata from NGOs (past applications, org history, project descriptions). 
-- Embedded and stored in a vector DB
+- Structured Metadata from foundations (scraped from the web and updated regularly). 
+- Structured Metadata from NGOs (past applications, org history, project descriptions).
+- Unstructured Data (Past successful applications, annual reports, strategic focus of foundation, etc). 
 
 Context retrieval:
 - Given an (NGO, foundation, project) tuple, retrieve the most relevant context: foundation requirements, similar past applications, org facts, successful examples. 
@@ -26,6 +26,8 @@ Tools to evaluate AI agents (e.g. Arize Phoenix, LangFuse)
  
 
 ### Proposed Architecture
+
+Ref. Excalidraw for visual representation of the architecture. 
 
 The output should be in a format that the users can interact with, ideally better than a chat interface (a word document, for example)
 
