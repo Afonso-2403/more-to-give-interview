@@ -2,18 +2,24 @@
 
 ### Problem decomposition
 
-Data engineering/Data preparation:
-- Metadata from foundations and NGOs (scraped from the web and updated regularly)
-- Contextual annotation
+Data preparation and Knowledge Base:
+- Metadata from foundations (scraped from the web and updated regularly). 
+- Metadata from NGOs (past applications, org history, project descriptions). 
 - Embedded and stored in a vector DB
 
+Context retrieval:
+- Given an (NGO, foundation, project) tuple, retrieve the most relevant context: foundation requirements, similar past applications, org facts, successful examples. 
+
 Draft generation:
-- Agentic RAG architecture: The agent receives a user query and interacts with the knowledge base to fetch relevant data iteratively
+- Agentic RAG architecture: The agent receives a user query and interacts with the knowledge base to fetch relevant data iteratively. 
 
 Validation/Fine Tuning:
-- Make sure all of the requirements are met, iterate again if not
-- Iterations with the user with new calls to the LLM to improve the draft 
+- Make sure all of the requirements are met, iterate again if not. 
+- Iterations with the user with new calls to the LLM to improve the draft. 
 
+User Interface:
+- The front-end where the user selects org + foundation + project, reviews the draft and edits. 
+- Ideally edits are incorporated to improve the model (if fine-tuning our own model). 
 
 Python libraries for AI agent development (e.g. LangGraph, Strands, crew.ai)
 Tools to evaluate AI agents (e.g. Arize Phoenix, LangFuse)
