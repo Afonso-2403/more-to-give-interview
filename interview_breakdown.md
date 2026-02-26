@@ -61,13 +61,13 @@ A big provider releasing this feature natively (whoever is already using ChatGPT
 ### Roadmap
 
 **MVP**
-- Hand curated golden dataset of foundations with a lot of data
+- Hand curated golden dataset of foundations with concrete requirements
 - Prompts are hand drafted per foundation
 - No unstructured data storage, just the existing SQL DB
 - Structured inputs from the NGOs
 - One-shot generation of the document
 - Validator model being a simple automation checking all sections are present, output is within limits
-- Simple Web UI 
+- Simple Web UI where users edit to add style
 
 
 
