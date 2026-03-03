@@ -13,3 +13,7 @@ Please note:
     The output can be reproduced and verified.
 
 In the attachment, please find an example of the project description and a list of the grant websites.
+
+## Architecture
+![architectural diagram](architecture/Architecture.png)
+
