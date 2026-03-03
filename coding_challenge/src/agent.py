@@ -2,7 +2,7 @@ import json
 import re
 
 import anthropic
-from anthropic.types import ToolParam, MessageParam
+from anthropic.types import MessageParam, TextBlock, ToolParam, ToolUseBlock
 
 from models import EligibilityResult, Foundation, Project
 from scraper import extract_links, fetch_page
@@ -104,8 +104,10 @@ def extract_project_info(raw_text: str, client: anthropic.Anthropic, model: str)
         messages=[{"role": "user", "content": f"Extract project information from this text:\n\n{raw_text}"}],
     )
 
-    text = response.content[0].text
-    data = _parse_json_response(text)
+    first_block = response.content[0]
+    if not isinstance(first_block, TextBlock):
+        raise ValueError("Expected a text response from Claude for project extraction")
+    data = _parse_json_response(first_block.text)
 
     return Project(
         name=data.get("name", "Unknown"),
@@ -173,7 +175,7 @@ def assess_foundation(
         if response.stop_reason != "tool_use":
             final_text = ""
             for block in response.content:
-                if hasattr(block, "text"):
+                if isinstance(block, TextBlock):
                     final_text += block.text
             return _parse_eligibility_result(final_text, foundation, scraped_urls, scrape_errors)
 
@@ -182,9 +184,9 @@ def assess_foundation(
         tool_results = []
 
         for block in assistant_content:
-            if block.type == "tool_use" and block.name == "fetch_webpage":
+            if isinstance(block, ToolUseBlock) and block.name == "fetch_webpage":
                 tool_calls_made += 1
-                url = block.input.get("url", "")
+                url = str(block.input.get("url", ""))
                 scraped_urls.append(url)
 
                 if tool_calls_made > max_tool_calls:
