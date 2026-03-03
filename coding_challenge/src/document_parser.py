@@ -46,10 +46,12 @@ def parse_foundations_list(path: str) -> list[Foundation]:
     """Read an .xlsx file and return a list of Foundation objects.
 
     Expects columns: (number, name, url) with a header row.
-    Skips rows where URL is empty.
+    Skips rows where name or URL is empty.
     """
     wb = openpyxl.load_workbook(path, read_only=True)
     ws = wb.active
+    if not ws:
+        raise Exception("Cannot load foundations workbook")
 
     foundations: list[Foundation] = []
     for i, row in enumerate(ws.iter_rows(values_only=True)):

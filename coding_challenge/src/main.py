@@ -70,8 +70,11 @@ def main() -> None:
     raw_text = load_project_description(args.project)
 
     print("Loading foundations list...")
-    foundations = parse_foundations_list(args.foundations)
-
+    try:
+        foundations = parse_foundations_list(args.foundations)
+    except Exception as ex:
+        sys.exit(f"Error: {ex}")
+        
     if args.only:
         foundations = [f for f in foundations if f.number in args.only]
 
