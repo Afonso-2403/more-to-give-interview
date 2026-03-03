@@ -36,7 +36,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--foundations", required=True, help="Path to foundations list (.xlsx)",
     )
     parser.add_argument(
-        "--output", help="Optional output file path (.json or .md)",
+        "--output", help="Optional output file (.json or .md)",
     )
     parser.add_argument(
         "--model", default="claude-sonnet-4-6", help="Claude model to use (default: claude-sonnet-4-6)",
@@ -127,12 +127,16 @@ def print_final_report(results: list[EligibilityResult]) -> None:
     print("=" * 60)
 
 
-def save_output(results: list[EligibilityResult], path: str) -> None:
-    """Save results to JSON or Markdown file."""
-    if path.endswith(".json"):
+def save_output(results: list[EligibilityResult], filename: str) -> Path:
+    """Save results to coding_challenge/outputs/<filename>. Supports .json and .md."""
+    output_dir = Path(__file__).resolve().parents[1] / "outputs"
+    output_dir.mkdir(exist_ok=True)
+    filepath = output_dir / filename
+
+    if filename.endswith(".json"):
         data = []
         for r in results:
-            entry = {
+            data.append({
                 "foundation_number": r.foundation.number,
                 "foundation_name": r.foundation.name,
                 "foundation_url": r.foundation.url,
@@ -143,13 +147,12 @@ def save_output(results: list[EligibilityResult], path: str) -> None:
                 "key_criteria_missed": r.key_criteria_missed,
                 "scraped_urls": r.scraped_urls,
                 "scrape_errors": r.scrape_errors,
-            }
-            data.append(entry)
-        with open(path, "w", encoding="utf-8") as f:
+            })
+        with open(filepath, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
-    elif path.endswith(".md"):
-        with open(path, "w", encoding="utf-8") as f:
+    elif filename.endswith(".md"):
+        with open(filepath, "w", encoding="utf-8") as f:
             f.write("# Foundation Eligibility Report\n\n")
             f.write("| # | Foundation | Eligible | Confidence |\n")
             f.write("|---|-----------|----------|------------|\n")
@@ -169,7 +172,9 @@ def save_output(results: list[EligibilityResult], path: str) -> None:
                 if r.key_criteria_missed:
                     f.write(f"**Missed:** {', '.join(r.key_criteria_missed)}\n\n")
     else:
-        raise ValueError("Unsupported output format '{path}'. Use .json or .md")
+        raise ValueError(f"Unsupported output format '{filename}'. Use .json or .md")
+
+    return filepath
 
 
 def main() -> None:
@@ -231,8 +236,8 @@ def main() -> None:
     # Save output
     if args.output:
         try:
-            save_output(results, args.output)
-            print(f"\nReport saved to: {args.output}")
+            filepath = save_output(results, args.output)
+            print(f"\nReport saved to: {filepath}")
         except ValueError as ex:
             print(ex)
 
