@@ -16,7 +16,7 @@ import argparse
 import json
 import os
 import sys
-from dataclasses import asdict
+from pathlib import Path
 
 import anthropic
 
@@ -176,10 +176,19 @@ def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
 
-    # Validate API key
+    # Load API key from .env file or environment
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
-        sys.exit("Error: ANTHROPIC_API_KEY environment variable not set.")
+        env_path = Path(__file__).resolve().parents[2] / ".env"
+        if env_path.exists():
+            for line in env_path.read_text().splitlines():
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    key, _, value = line.partition("=")
+                    os.environ[key.strip()] = value.strip()
+            api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        sys.exit("Error: ANTHROPIC_API_KEY not found. Set it in .env or as an environment variable.")
 
     # Load inputs
     print("Loading project description...")
