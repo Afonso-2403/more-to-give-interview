@@ -2,11 +2,12 @@ import json
 import re
 
 import anthropic
+from anthropic.types import ToolParam, MessageParam
 
 from models import EligibilityResult, Foundation, Project
 from scraper import extract_links, fetch_page
 
-FETCH_TOOL = {
+FETCH_TOOL: ToolParam = {
     "name": "fetch_webpage",
     "description": (
         "Fetch the content of a webpage. Returns the page text and a list of "
@@ -132,7 +133,7 @@ def assess_foundation(
     """Run an agentic loop for one foundation and return an EligibilityResult."""
     project_summary = _format_project_summary(project)
 
-    messages = [
+    messages: list[MessageParam] = [
         {
             "role": "user",
             "content": (
@@ -150,66 +151,64 @@ def assess_foundation(
     scraped_urls: list[str] = []
     scrape_errors: list[str] = []
     tool_calls_made = 0
+    limit_exceeded = False
 
     while True:
+        # After the limit, stop offering tools so Claude must give a final text answer
+        tools = [] if limit_exceeded else [FETCH_TOOL]
+
         try:
             response = client.messages.create(
                 model=model,
                 max_tokens=2048,
                 temperature=0,
                 system=ASSESSMENT_SYSTEM_PROMPT,
-                tools=[FETCH_TOOL],
+                tools=tools,
                 messages=messages,
             )
         except anthropic.APIError as e:
             return _error_result(foundation, f"Claude API error: {e}", scraped_urls, scrape_errors)
 
-        # Check if Claude wants to use a tool
-        if response.stop_reason == "tool_use":
-            # Process all tool use blocks in the response
-            assistant_content = response.content
-            tool_results = []
-
-            for block in assistant_content:
-                if block.type == "tool_use" and block.name == "fetch_webpage":
-                    tool_calls_made += 1
-                    url = block.input.get("url", "")
-                    scraped_urls.append(url)
-
-                    if tool_calls_made > max_tool_calls:
-                        tool_results.append({
-                            "type": "tool_result",
-                            "tool_use_id": block.id,
-                            "content": (
-                                "Tool call limit reached. Make your best assessment "
-                                "with the information gathered so far."
-                            ),
-                        })
-                    else:
-                        result_text = _execute_fetch(url)
-                        if result_text.startswith("Failed to fetch"):
-                            scrape_errors.append(f"{url}: {result_text}")
-                        tool_results.append({
-                            "type": "tool_result",
-                            "tool_use_id": block.id,
-                            "content": result_text,
-                        })
-
-            messages.append({"role": "assistant", "content": assistant_content})
-            messages.append({"role": "user", "content": tool_results})
-
-            # If we hit the limit, force one more round for the final answer
-            if tool_calls_made > max_tool_calls:
-                continue
-
-        else:
-            # Claude is done — parse the final response
+        # If Claude is done (end_turn or no more tools available), parse the final response
+        if response.stop_reason != "tool_use":
             final_text = ""
             for block in response.content:
                 if hasattr(block, "text"):
                     final_text += block.text
-
             return _parse_eligibility_result(final_text, foundation, scraped_urls, scrape_errors)
+
+        # Process all tool use blocks in the response
+        assistant_content = response.content
+        tool_results = []
+
+        for block in assistant_content:
+            if block.type == "tool_use" and block.name == "fetch_webpage":
+                tool_calls_made += 1
+                url = block.input.get("url", "")
+                scraped_urls.append(url)
+
+                if tool_calls_made > max_tool_calls:
+                    limit_exceeded = True
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": (
+                            "Tool call limit reached. Make your best assessment "
+                            "with the information gathered so far."
+                        ),
+                    })
+                else:
+                    result_text = _execute_fetch(url)
+                    if result_text.startswith("Failed to fetch"):
+                        scrape_errors.append(f"{url}: {result_text}")
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": result_text,
+                    })
+
+        messages.append({"role": "assistant", "content": assistant_content})
+        messages.append({"role": "user", "content": tool_results})
 
 
 def _execute_fetch(url: str) -> str:
