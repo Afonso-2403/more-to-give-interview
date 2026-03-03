@@ -17,7 +17,7 @@ HEADERS = {
 TIMEOUT = 15  # seconds
 MAX_CONTENT_LENGTH = 15_000  # characters
 
-# Danish keywords indicating pages with eligibility/application info
+# Danish and english keywords indicating pages with eligibility/application info
 LINK_KEYWORDS = [
     "ansøg", "kriterier", "betingelser", "formål", "støtte", "vilkår",
     "legat", "fond", "apply", "criteria", "about", "om-fond", "om-os",
@@ -38,7 +38,8 @@ def fetch_page(url: str) -> ScrapedPage:
     except requests.exceptions.ConnectionError:
         return ScrapedPage(url=url, text="", raw_html="", success=False, error="Connection failed")
     except requests.exceptions.HTTPError as e:
-        return ScrapedPage(url=url, text="", raw_html="", success=False, error=f"HTTP {e.response.status_code}")
+        status = e.response.status_code if e.response else "unknown"
+        return ScrapedPage(url=url, text="", raw_html="", success=False, error=f"HTTP {status}")
     except requests.exceptions.RequestException as e:
         return ScrapedPage(url=url, text="", raw_html="", success=False, error=str(e))
 
@@ -77,7 +78,7 @@ def extract_links(html: str, base_url: str) -> list[str]:
     seen: set[str] = set()
 
     for a_tag in soup.find_all("a", href=True):
-        href = a_tag["href"]
+        href = str(a_tag["href"])
         link_text = a_tag.get_text(strip=True).lower()
         href_lower = href.lower()
 
