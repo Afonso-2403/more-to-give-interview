@@ -1,0 +1,351 @@
+[
+  {
+    "foundation_number": 1,
+    "foundation_name": "Bruun Laursens Fond",
+    "foundation_url": "https://bruunlaursensfond.dk/",
+    "eligible": true,
+    "confidence": "medium",
+    "reasoning": "Bruun Laursens Fond is a Danish public-benefit foundation whose stated purpose is to create positive change for people and the environment, both locally and nationally. The Plastic Project aligns well with this dual focus on environment and human health (children's exposure to toxic chemicals in daycare centers). The foundation explicitly supports organizations (not individuals), and Plastic Project is a registered Danish association — satisfying that requirement. The foundation has no apparent geographic restriction beyond Denmark, and the project is 100% Denmark-based. The main uncertainty is that the foundation's website provides limited detail on grant size preferences or specific thematic priorities, so it is unclear whether the DKK 650,000 sought (or a partial contribution) falls within their typical grant range.",
+    "key_criteria_matched": [
+      "Foundation supports projects benefiting people AND the environment — project addresses both children's health and plastic pollution",
+      "Foundation funds organizations, not individuals — Plastic Project is a registered Danish association with CVR number",
+      "Project is entirely Denmark-based, consistent with the foundation's local/national scope",
+      "Foundation is open to applications twice yearly (April 1 and October 1) — project timeline allows for this",
+      "Project has broad public benefit (approx. 200,000 children in daycare institutions), aligning with the foundation's 'for the community' mission",
+      "Partial funding is acceptable — project is designed for multi-funder financing"
+    ],
+    "key_criteria_missed": [
+      "No publicly available information on typical grant sizes — unclear if DKK 650,000 (or a partial amount) is within the foundation's normal range",
+      "Foundation's formal statutes (fundats) could not be read in full due to binary PDF encoding — specific thematic exclusions or restrictions remain unverified",
+      "No explicit mention of environmental health or children's health as a priority area on the website — thematic fit is inferred from the broad 'people and environment' mandate"
+    ],
+    "scraped_urls": [
+      "https://bruunlaursensfond.dk/",
+      "https://bruunlaursensfond.dk/om-fonden/",
+      "https://bruunlaursensfond.dk/ansoeg-fonden/",
+      "https://bruunlaursensfond.dk/wp-content/uploads/2024/08/Fondens-fundats-Bruun-Laursens-Fond-2024.pdf"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 2,
+    "foundation_name": "Agnete og Carl M. Hauges Fond",
+    "foundation_url": "https://haugefonden.com/",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "Agnete og Carl M. Hauges Fond has a strictly defined purpose: supporting disease prevention in Denmark ('sygdomsbekæmpelse i Danmark') and providing help and relief to individuals suffering from illness ('sygdomsramte'). The Plastic Project focuses on plastic pollution, toxic chemicals in daycare centers, children's environmental health, and policy advocacy — none of which fall within the foundation's disease-fighting mandate. There is no overlap between the project's focus areas and the foundation's stated support criteria.",
+    "key_criteria_matched": [
+      "Project is based in Denmark (foundation funds Danish causes)",
+      "Project involves an organization (CVR number applicable), which the foundation does accept applications from under the 'Øvrige' category"
+    ],
+    "key_criteria_missed": [
+      "Foundation exclusively funds disease prevention ('sygdomsbekæmpelse') and relief for sick individuals ('sygdomsramte') — not environmental or plastic pollution projects",
+      "Project's focus on plastic-free daycare centers, toxic chemicals policy, and environmental advocacy does not constitute disease prevention in the medical/clinical sense the foundation intends",
+      "No connection to the foundation's core mission of illness-related support"
+    ],
+    "scraped_urls": [
+      "https://haugefonden.com/"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 3,
+    "foundation_name": "Inge Aasted Grant",
+    "foundation_url": "https://aasted.eu/sustainability/the-inge-aasted-grant/",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "The Inge Aasted Grant awards a fixed DKK 100,000 annually — far below the DKK 650,000 sought by Plastic Project (or even the DKK 850,000 total budget). More critically, the grant explicitly states it does NOT fund projects 'for political purposes, either financially or in-kind,' while Plastic Project's plan includes a dedicated political campaign targeting the Folketing and ministries (budgeted at DKK 120,000). Additionally, the grant is oriented toward innovation, diversity in manufacturing/STEM, and tech-driven sustainability solutions — the profile of the 2025 winner (an AI-powered LCA platform) illustrates this tech/startup focus, which does not align well with Plastic Project's advocacy, mapping, and policy work.",
+    "key_criteria_matched": [
+      "Sustainability focus — the project addresses environmental and health impacts of plastic, which aligns broadly with the grant's sustainability criterion",
+      "Danish-based organization — Plastic Project is a Danish registered association, consistent with the grant's Danish context",
+      "Research and reporting component — the project includes a research-based report, which partially aligns with the 'research groups or projects' category of eligible applicants"
+    ],
+    "key_criteria_missed": [
+      "Grant size mismatch — the grant awards a fixed DKK 100,000, while the project seeks DKK 650,000 (or even a partial contribution would likely far exceed the fixed award amount)",
+      "Political purposes exclusion — the grant explicitly does not fund political activities, and a core component of this project is a political campaign targeting the Folketing and ministries",
+      "Innovation/tech/diversity focus — the grant strongly favors innovative tech solutions, startups, and diversity in manufacturing/STEM; this project is an advocacy and policy NGO initiative, not a tech or innovation project",
+      "No ongoing operations/administration — the grant excludes ongoing operations and administration, which make up part of the project budget"
+    ],
+    "scraped_urls": [
+      "https://aasted.eu/sustainability/the-inge-aasted-grant/"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 4,
+    "foundation_name": "Aarhus University Forskningsfond",
+    "foundation_url": "https://auff.au.dk/bevillinger/international-mobilitet",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "Aarhus Universitets Forskningsfond (AUFF) — specifically this grant program for 'International Mobilitet' — exclusively funds international mobility for researchers affiliated with Aarhus University. The two instruments available are: (1) guest researcher stipends for foreign researchers visiting AU, and (2) sabbatical stipends for AU-employed researchers staying at foreign universities. Plastic Project is a Danish NGO/association with no affiliation to Aarhus University, and the project involves domestic environmental and health advocacy work in Danish daycare centers — not academic researcher mobility. There is a fundamental mismatch on every eligibility dimension.",
+    "key_criteria_matched": [],
+    "key_criteria_missed": [
+      "Applicant must be a permanently employed researcher (associate professor/senior researcher or professor) at Aarhus University",
+      "Funding is exclusively for international researcher mobility (inbound guest researchers or outbound AU researcher sabbaticals)",
+      "Applications must be submitted by an AU host or AU-affiliated researcher — NGOs are not eligible applicants",
+      "Project must involve stays at foreign universities, not domestic advocacy or environmental health campaigns",
+      "No relevance to plastic pollution, children's health, daycare institutions, or policy campaigns"
+    ],
+    "scraped_urls": [
+      "https://auff.au.dk/bevillinger/international-mobilitet"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 5,
+    "foundation_name": "Theodores Fond",
+    "foundation_url": "https://www.aalborgbibliotekerne.dk/theodores-fond",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "Theodores Fond is a small, hyper-local fund administered by Aalborg Bibliotekerne (Aalborg Libraries) that exclusively supports children and young people aged 0–16 from Aalborg Municipality with their own ideas and projects. The fund is explicitly restricted to applicants from Aalborg Kommune, whereas the Plastic Project is a national Danish NGO operating across multiple municipalities. Furthermore, the fund is designed for applications from children themselves (or children together with adults), not from registered associations or NGOs. The grant sizes are also entirely incompatible — Theodores Fond awards small sums to individual children's initiatives, while the Plastic Project seeks 650,000 DKK.",
+    "key_criteria_matched": [
+      "Project involves children aged 0–6, which overlaps with the fund's 0–16 age group focus",
+      "Project aims to improve children's everyday life in daycare institutions, which is mentioned as a possible support area"
+    ],
+    "key_criteria_missed": [
+      "Fund is geographically restricted to Aalborg Kommune — the project operates nationally across multiple municipalities",
+      "Fund is intended for applications from children and young people themselves, not from NGOs or associations",
+      "Grant size is completely mismatched — the fund awards small amounts to children's initiatives, not 650,000 DKK to professional organizations",
+      "Applicant must be a child or young person aged 0–16, not a registered Danish association"
+    ],
+    "scraped_urls": [
+      "https://www.aalborgbibliotekerne.dk/theodores-fond"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 6,
+    "foundation_name": "Tonni og Kaj Munksos Fond",
+    "foundation_url": "https://www.arnfred-advokater.dk/fonde/tonni-og-kaj-munks%C3%B8s-fond",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "Tonni og Kaj Munksøs Fond has a very narrow and specific mandate: it supports (1) further education abroad for young students born in Silkeborg municipality, and (2) cultural and sporting purposes in Silkeborg municipality. The Plastic Project is a national environmental/health initiative targeting Danish daycare institutions across multiple municipalities, with no connection to Silkeborg or to education abroad. There is no overlap whatsoever between the foundation's stated purposes and the project's focus areas.",
+    "key_criteria_matched": [],
+    "key_criteria_missed": [
+      "Foundation is geographically restricted to Silkeborg municipality — the project operates nationally across multiple municipalities",
+      "Foundation only funds education abroad (for individuals born in Silkeborg) or local cultural/sports activities — not environmental or children's health projects",
+      "Foundation appears to fund individuals (individual applications required), not NGOs or associations",
+      "Project focus areas (plastic pollution, toxic chemicals, policy, environment) are entirely outside the foundation's scope"
+    ],
+    "scraped_urls": [
+      "https://www.arnfred-advokater.dk/fonde/tonni-og-kaj-munks%C3%B8s-fond"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 7,
+    "foundation_name": "Rasmus Peter Nielsen Fond",
+    "foundation_url": "https://lfmo.dk/olf/fonde/",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "The Rasmus Peter Nielsen Fond has a very specific and narrow purpose: to support young farmers ('unge landmænd') during their agricultural education ('landmandsuddannelse'). Grants are awarded exclusively to individual persons — not organizations or NGOs. Furthermore, recipients must preferably originate from the former Brædstrup and Them municipalities in East Jutland. The Plastic Project is a Danish NGO working on plastic pollution, children's health, and environmental policy, which has no overlap whatsoever with the foundation's agricultural education mandate.",
+    "key_criteria_matched": [
+      "Project is based in Denmark"
+    ],
+    "key_criteria_missed": [
+      "Foundation only funds individuals (young farmers), not organizations or NGOs",
+      "Foundation's purpose is exclusively agricultural education — completely unrelated to plastic pollution, children's health, or environmental policy",
+      "Geographic restriction: grants are preferably limited to persons from the former Brædstrup and Them municipalities",
+      "Grants are awarded at a specific annual general meeting in March with a February 15 deadline — not a general open application process for projects",
+      "No thematic connection to plastic, environment, daycare centers, or public health"
+    ],
+    "scraped_urls": [
+      "https://lfmo.dk/olf/fonde/"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 8,
+    "foundation_name": "Bestles Fond",
+    "foundation_url": "https://www.bestlesfond.dk/",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "Bestles Fond primarily supports cultural purposes and general social welfare (almennyttige sociale formål), with a secondary allocation for young wine trade professionals' education. The Plastic Project focuses on environmental pollution, children's health, toxic chemicals in daycare centers, and political campaigning — none of which align with the fund's stated focus areas. Additionally, the fund's typical grant size is 10,000–100,000 DKK (with most grants in the 10,000–50,000 DKK range), which is far below the 650,000 DKK sought by the project. The fund also explicitly does not support study semesters abroad, suggesting a conservative and narrow scope.",
+    "key_criteria_matched": [
+      "Danish-based applicant organization",
+      "Project has a public benefit dimension (children's health and safety)",
+      "Budget documentation and project description can be provided as required"
+    ],
+    "key_criteria_missed": [
+      "Foundation focuses on cultural and social welfare purposes — not environment, health, or plastic pollution",
+      "Typical grant size (10,000–100,000 DKK) is far below the 650,000 DKK sought",
+      "No indication the foundation funds NGO advocacy or political campaigns",
+      "No alignment with the foundation's secondary focus on wine trade education"
+    ],
+    "scraped_urls": [
+      "https://www.bestlesfond.dk/",
+      "https://www.bestlesfond.dk/om-bestles-fond",
+      "https://www.bestlesfond.dk/ansogningskriterier"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 9,
+    "foundation_name": "Lærer Morten Jensen og hustru Else Jensens legat",
+    "foundation_url": "https://www.rksk.dk/om-kommunen/legater-priser-og-puljer/laerer-morten-jensen-og-hustru-else-jensens-legat",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "This legacy fund (legat) is strictly designated for financially disadvantaged young individuals ('uformuende unge') who have attended Ringkøbing Skole and wish to study to become a priest, doctor, or teacher. It funds individual students, not organizations or NGO projects. The grant amounts are also extremely small (2,000 DKK per portion), which is entirely incompatible with the project's funding need of 650,000 DKK. Plastic Project's environmental and health-focused NGO work has no overlap whatsoever with this fund's purpose.",
+    "key_criteria_matched": [],
+    "key_criteria_missed": [
+      "Fund exclusively supports individual persons (students), not organizations or NGOs",
+      "Applicants must have attended Ringkøbing Skole specifically",
+      "Applicants must be studying to become a priest, doctor, or teacher",
+      "Applicants must demonstrate financial need (personal means-tested)",
+      "Grant size is 2,000 DKK per portion — far below the 650,000 DKK sought",
+      "No connection to plastic pollution, children's health, environment, or policy work"
+    ],
+    "scraped_urls": [
+      "https://www.rksk.dk/om-kommunen/legater-priser-og-puljer/laerer-morten-jensen-og-hustru-else-jensens-legat"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 10,
+    "foundation_name": "KG Hansen",
+    "foundation_url": "https://www.kgh.dk/om-kg/",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "KG Hansen (kgh.dk) is a Danish construction company specializing in total and main contracting for buildings — it is not a grant-making foundation. While the company is owned by KG Fonden, which supports non-profit organizations, the website provides no grant application process, no focus areas related to plastic pollution or children's health in Denmark, and no evidence that external NGOs can apply for funding. The only visible charitable activity is a corporate CSR donation to Danmarks Indsamling. This is not a relevant funding source for the Plastic Project.",
+    "key_criteria_matched": [],
+    "key_criteria_missed": [
+      "KG Hansen is a construction company, not a grant-making foundation",
+      "No grant application process or program exists on the website",
+      "No thematic alignment with plastic pollution, children's health, or environmental policy",
+      "KG Fonden's own website is unreachable and no grant criteria are published",
+      "No indication that external NGOs or associations can apply for funding"
+    ],
+    "scraped_urls": [
+      "https://www.kgh.dk/om-kg/",
+      "https://www.kgh.dk",
+      "https://www.kgfonden.dk",
+      "https://www.kgh.dk/kg-hansen-stoetter-danmarks-indsamling-2026/",
+      "https://www.kgfonden.dk/om-fonden"
+    ],
+    "scrape_errors": [
+      "https://www.kgfonden.dk: Failed to fetch https://www.kgfonden.dk: Connection failed"
+    ]
+  },
+  {
+    "foundation_number": 11,
+    "foundation_name": "Københavns Kommunes fællesfond",
+    "foundation_url": "https://www.kk.dk/brug-byen/kultur-og-projektstoette/legater/legat-til-projekter-og-institutioner-til-fordel-for-boern-og-unge",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "Københavns Kommunes fællesfond explicitly requires that applicants (persons or institutions) have a connection to the City of Copenhagen ('tilknytning til Københavns Kommune'). Plastic Project is a national Danish NGO operating across selected municipalities with no stated connection to Copenhagen specifically. Furthermore, the grant amounts distributed in 2024–2025 were between 10,000 and 13,000 DKK — far below the 650,000 DKK sought by this project. The fund also prioritises projects not already receiving public support, which is a minor alignment, but the geographic and budget mismatches are decisive disqualifiers.",
+    "key_criteria_matched": [
+      "Project benefits children (aged 0–6), which aligns with the fund's focus on 'børn og unge' (children and youth)",
+      "Applicant is a registered association with audited accounts and approved statutes, meeting formal documentation requirements",
+      "Project does not appear to already receive public funding, matching the fund's preference for non-publicly-funded initiatives"
+    ],
+    "key_criteria_missed": [
+      "No demonstrated connection to the City of Copenhagen ('tilknytning til Københavns Kommune') — the project operates nationally across unspecified municipalities",
+      "Severe budget mismatch: the fund awards 10,000–13,000 DKK per grant, while the project seeks 650,000 DKK",
+      "The fund's geographic scope is restricted to Copenhagen, whereas this project is national in scope"
+    ],
+    "scraped_urls": [
+      "https://www.kk.dk/brug-byen/kultur-og-projektstoette/legater/legat-til-projekter-og-institutioner-til-fordel-for-boern-og-unge"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 12,
+    "foundation_name": "Konpa Legatfond",
+    "foundation_url": "https://www.konpa.dk/konpa-legatfond/",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "KONPA Legatfond is a trade association grant fund (formerly Dansk Papirhandlerforening – the Danish Paper Merchants' Association) that exclusively supports individuals with a connection to the paper/stationery trade industry. Its charter explicitly restricts grants to members, former members, their widows or children under 18, students and retirees from the industry, and persons who have operated paper businesses. The fund also supports vocational training within the industry. Plastic Project is a Danish NGO working on plastic pollution and children's health — it has no connection whatsoever to the paper trade industry, and it is an organization, not an individual.",
+    "key_criteria_matched": [],
+    "key_criteria_missed": [
+      "Fund exclusively supports individuals (members, former members, widows, children, retirees) — not organizations or NGOs",
+      "Fund is restricted to persons with a connection to the paper/stationery trade industry (KONPA/Dansk Papirhandlerforening)",
+      "Fund's purpose is entirely unrelated to plastic pollution, children's health, environment, or consumer safety",
+      "Educational support is limited to vocational training within the paper trade industry only"
+    ],
+    "scraped_urls": [
+      "https://www.konpa.dk/konpa-legatfond/"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 13,
+    "foundation_name": "Isabella Fonden",
+    "foundation_url": "https://www.isabellafonden.dk/",
+    "eligible": false,
+    "confidence": "high",
+    "reasoning": "Isabellafonden was established by the founder of Isabella (a camping equipment company) and exclusively supports two purposes: current/former employees of the Isabella Group, and outdoor sports, outdoor life, and camping activities in Denmark. The Plastic Project's focus on plastic pollution, children's health in daycare centers, toxic chemicals, and policy advocacy has no overlap with the foundation's stated grant purposes. There is no indication the foundation funds environmental NGO projects or children's health initiatives.",
+    "key_criteria_matched": [],
+    "key_criteria_missed": [
+      "Foundation only funds outdoor sports, outdoor life, and camping activities (Formål 3) or Isabella Group employees (Formål 2)",
+      "No support for environmental NGO projects or children's health campaigns",
+      "No alignment with plastic pollution, daycare safety, or policy advocacy work",
+      "Foundation is closely tied to a specific commercial company and its legacy"
+    ],
+    "scraped_urls": [
+      "https://www.isabellafonden.dk/",
+      "https://www.isabellafonden.dk/Isabellafonden",
+      "https://www.isabellafonden.dk/uddelinger",
+      "https://www.isabellafonden.dk/uddelinger/ansoegningskriterier-formaal-3",
+      "https://www.isabellafonden.dk/baggrund"
+    ],
+    "scrape_errors": [
+      "https://www.isabellafonden.dk/Isabellafonden: Failed to fetch https://www.isabellafonden.dk/Isabellafonden: HTTP unknown",
+      "https://www.isabellafonden.dk/uddelinger/ansoegningskriterier-formaal-3: Failed to fetch https://www.isabellafonden.dk/uddelinger/ansoegningskriterier-formaal-3: HTTP unknown"
+    ]
+  },
+  {
+    "foundation_number": 14,
+    "foundation_name": "A. P. Moller Fonden",
+    "foundation_url": "https://www.apmollerfonde.dk/ansoegning/a-p-moeller-fonden/",
+    "eligible": true,
+    "confidence": "medium",
+    "reasoning": "A.P. Møller Fonden supports a broad range of public benefit ('almennyttige') purposes, explicitly including nature, climate, research, social causes, and education — all of which overlap with the Plastic Project's focus on children's health, toxic chemicals, environmental protection, and policy advocacy. The project is 100% Danish-based, which aligns with the foundation's geographic scope. The project is submitted by a registered Danish association (not an individual), and the funding sought (650,000 DKK, or a partial contribution) is well within the foundation's capacity, which distributes billions of DKK annually. However, the foundation's most prominent and historically core focus areas are maritime/industrial heritage, medical science, and cultural preservation — environmental/health advocacy projects for children are less central, making this a possible but not guaranteed fit under the broad 'almennytte' umbrella.",
+    "key_criteria_matched": [
+      "Applicant is a registered Danish organization (not an individual) with CVR number, audited accounts, and approved statutes",
+      "Project is entirely based in Denmark, matching the foundation's primary geographic scope",
+      "Project falls under 'almennyttige formål' (public benefit) — specifically nature, environment, children's health, and research",
+      "Budget size (650,000 DKK sought, partial contributions also welcome) is appropriate for the foundation's scale",
+      "Project involves research and report publication, which aligns with the foundation's support for 'videnskabelige formål'",
+      "Foundation does not fund individuals — this is an organizational applicant",
+      "Foundation supports rolling applications with no fixed deadlines"
+    ],
+    "key_criteria_missed": [
+      "The project does not align with the foundation's most prominent core areas: Danish-German borderland identity, Nordic cohesion, maritime/shipping industry, or medical science specifically",
+      "The foundation explicitly does not support ongoing operations and administration — the project budget includes 50,000 DKK for administration, which may require justification",
+      "Environmental/plastic pollution advocacy is not explicitly listed as a priority area; fit depends on broad interpretation of 'almennytte'"
+    ],
+    "scraped_urls": [
+      "https://www.apmollerfonde.dk/ansoegning/a-p-moeller-fonden/",
+      "https://www.apmollerfonde.dk/fonden/om-fonden/",
+      "https://www.apmollerfonde.dk/",
+      "https://www.apmollerfonde.dk/ansoegning/a-p-moeller-fonden/uddelingspolitik/"
+    ],
+    "scrape_errors": []
+  },
+  {
+    "foundation_number": 15,
+    "foundation_name": "Ejendomsmæglernes Fond",
+    "foundation_url": "http://ejendomsmaeglernesfond.dk/forside.aspx",
+    "eligible": true,
+    "confidence": "medium",
+    "reasoning": "Ejendomsmæglernes Fond explicitly grants donations to associations (not individuals), and Plastic Project is a registered Danish association — this basic eligibility criterion is met. The foundation's donation form lists 'Natur og miljøformål' (nature and environment purposes) and 'Sundhed og motionsformål' (health purposes) as recognized funding categories, both of which align well with the project's focus on plastic pollution, children's health, and toxic chemicals. The foundation's stated purpose is broad — supporting cultural, scientific, and social causes — which can reasonably encompass an environmental health project targeting Danish daycare children. However, the foundation is rooted in the real estate industry (Dansk Ejendomsmæglerforenings 5. kreds) and is based in Aalborg, and its historical giving has leaned toward local/regional cultural and trade-related activities, meaning the project's national scope and environmental/health focus may be a lower priority for the board.",
+    "key_criteria_matched": [
+      "Grants are given to associations, not individuals — Plastic Project is a registered Danish association",
+      "Foundation accepts applications under 'Natur og miljøformål' (nature and environment) and 'Sundhed og motionsformål' (health) — both directly relevant to the project",
+      "Foundation's broad statutory purpose includes scientific and social causes, which covers health research and environmental advocacy",
+      "Project is Denmark-based, consistent with the foundation's domestic focus"
+    ],
+    "key_criteria_missed": [
+      "Foundation is historically tied to the Danish real estate sector (Ejendomsmæglerforeningens 5. kreds) and its giving has focused on trade-related, local cultural, and community activities — plastic/environment projects are outside its core identity",
+      "Foundation is geographically anchored in Aalborg/North Jutland; the project operates nationally across multiple municipalities, which may be a weaker fit",
+      "No indication the foundation funds large multi-year projects of this scale (850,000 DKK over 24 months); grant sizes are unknown but likely modest given the foundation's profile",
+      "No explicit mention of environmental NGO work or policy campaigns in the foundation's historical grants or stated priorities"
+    ],
+    "scraped_urls": [
+      "http://ejendomsmaeglernesfond.dk/forside.aspx",
+      "http://ejendomsmaeglernesfond.dk/vedtaegter.aspx",
+      "http://ejendomsmaeglernesfond.dk/donationer.aspx"
+    ],
+    "scrape_errors": []
+  }
+]
