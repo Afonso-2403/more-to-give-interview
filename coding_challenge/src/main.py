@@ -67,14 +67,17 @@ def main() -> None:
 
     # Load inputs
     print("Loading project description...")
-    raw_text = load_project_description(args.project)
-
+    try:
+        raw_text = load_project_description(args.project)
+    except ValueError as ex:
+        sys.exit(f"Error: {ex}")
+        
     print("Loading foundations list...")
     try:
         foundations = parse_foundations_list(args.foundations)
     except Exception as ex:
         sys.exit(f"Error: {ex}")
-        
+
     if args.only:
         foundations = [f for f in foundations if f.number in args.only]
 
