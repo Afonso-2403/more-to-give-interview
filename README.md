@@ -17,11 +17,22 @@ Given a project description (`.docx`) and a list of foundation websites (`.xlsx`
 4. Outputs a structured report with eligibility status, confidence, and reasoning
 
 **Usage:**
+
 From the repo's root folder:
 ```bash
 uv run python coding_challenge/src/main.py \
   --project "coding_challenge/Project Plastic_Project description.docx" \
   --foundations "coding_challenge/Project Plastic_Foundations.xlsx" \
+  --output plastic_project_report.json
+```
+
+It is also possible to consider only some foundations (by number), useful for testing:
+
+```bash
+uv run python coding_challenge/src/main.py \
+  --project "coding_challenge/Project Plastic_Project description.docx" \
+  --foundations "coding_challenge/Project Plastic_Foundations.xlsx" \
+  --only 1 2 7 \
   --output plastic_project_report.json
 ```
 
