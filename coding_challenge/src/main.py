@@ -169,7 +169,7 @@ def save_output(results: list[EligibilityResult], path: str) -> None:
                 if r.key_criteria_missed:
                     f.write(f"**Missed:** {', '.join(r.key_criteria_missed)}\n\n")
     else:
-        print(f"Warning: Unsupported output format '{path}'. Use .json or .md")
+        raise ValueError("Unsupported output format '{path}'. Use .json or .md")
 
 
 def main() -> None:
@@ -230,8 +230,11 @@ def main() -> None:
 
     # Save output
     if args.output:
-        save_output(results, args.output)
-        print(f"\nReport saved to: {args.output}")
+        try:
+            save_output(results, args.output)
+            print(f"\nReport saved to: {args.output}")
+        except ValueError as ex:
+            print(ex)
 
 
 if __name__ == "__main__":
